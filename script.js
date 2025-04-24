@@ -201,11 +201,160 @@ There’s no need to implement a special handling for a non-numeric input in thi
 //   }
 // }
 
-let n=10;
-nextPrime:for(let i=2;i<=n;i++){
-for (let j=2; j<i;j++){
-    if(i%j===0) continue nextPrime
-}
-console.log(i)
+// let n=10;
+// nextPrime:for(let i=2;i<=n;i++){
+// for (let j=2; j<i;j++){
+//     if(i%j===0) continue nextPrime
+// }
+// console.log(i)
 
+// }
+// switch -case
+
+let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert( 'Too small' );
+    break;
+  case 4:
+    alert( 'Exactly!' );
+    break;
+  case 5:
+    alert( 'Too big' );
+    break;
+  default:
+    alert( "I don't know such values" );
 }
+
+// we can grouping case
+// let b=13;
+// switch(b){
+//     case 13:
+//     case 12:
+//         alert("hi i am 12 and 13")
+//         break;
+//     case 15:
+//         alert("yo yo");
+//         break;
+//         default:
+//             alert("haha ")
+//         }
+// in swtch case equality checks are strict 
+// prompt takes the string type
+// let CasesNames=prompt("enter a data type")
+// switch(CasesNames){
+//     case "1":
+//         alert("i am  string 1")
+//         break;
+//     case 1:
+//         alert("i am number 1")
+// }
+
+// let Browser=prompt("ENTER THE BROWSER NAME")
+// if (Browser==="Edge"){
+//     alert("You have got the Edge")
+// }else if (Browser==="Chrome" || Browser==="Firefox" || Browser==="Safari" || Browser==="Opera"){
+//     alert("Okay  we support the browsers")
+
+// }
+// else{
+//     alert("we hopejhjcjhdvchwv")
+// }
+// +prompt()- basically this is conver input to num type
+// let c=+prompt("c?"," ")
+// switch(c){
+//     case 0:
+//         alert(0);
+//         break;
+//     case 1:
+//         alert(1)
+//         break;
+//     case 2:
+//     case 3:
+//         alert("2,3");
+//         break;
+//     default:
+//         alert("SS")
+//         break;
+
+// }
+// function-allow the block of code run many times without repetation
+function ShowPrimes(n){
+    outer: for (let i=2;i<n;i++){
+        for(let j=2;j<i;j++){
+            if(i % j === 0) continue outer
+        }
+        console.log(i) //prime
+    }
+}
+// ShowPrimes(10)
+
+// second varient
+function ShowPrimes1(n){
+    
+    for(let i=2;i<n;i++){
+        if (!isPrime(i)) continue
+        console.log(i,"aa")
+    }
+}
+function isPrime(n){
+for (let j=2 ;j< n;j++){
+    if (n % j === 0) return  false
+}
+ return true
+}
+// ShowPrimes1(20)
+
+//  else required or not?
+function CheckAge(age){
+    if (age>18){
+        return true;
+    }else{
+        return confirm("Did your parents allow you?")
+    }
+}
+
+// CheckAge(12)
+// CheckAge(12)
+function CheckAge(age){
+    if (age>18){
+        return true;
+    }
+    return confirm("Did your parents allow you?")
+    
+}
+
+// CheckAge(12)
+// Rewrite the function using "?" or  ||
+
+function CheckAge(age){
+return (age>18) ?  true :  confirm("Did your pareents allow") 
+}
+// CheckAge(12)
+function CheckAge(age){
+    return (age>18) || confirm("Did your pareents allow") ;
+}
+// CheckAge(19)
+// function min(a,b)
+function min(a,b){
+    return (a<b)? alert(a):alert(b);
+}
+// min(19,18)
+
+// function pow(x,n)
+let x=+prompt("x?")
+let n=+prompt("n?")
+function pow(x,n){
+    let result=1;
+
+    for(let i=1;i<=n;i++){
+         
+        result*=x
+    }
+   return result
+   
+}
+let result=(n<1)?"Put the value of n >1": pow(x,n)
+alert(result)
+
