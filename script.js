@@ -357,4 +357,3 @@ function pow(x,n){
 }
 let result=(n<1)?"Put the value of n >1": pow(x,n)
 alert(result)
-
